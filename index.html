@@ -4,42 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator | snebo</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="inputBox"></div>
-        <div class="row1">
-            <button class="ctrlBtn" >C</button>
-            <button class="ctrlBtn">del</button>
-            <button class="ctrlBtn">sqr</button>
-            <button class="oprBtn">/</button>
+    <div class="main_container">
+        <div class="calculator">
+            <div class="inputBox">
+                <div class="textBox">
+                    <p class="result">27</p>
+                    <p class="func">10+17</p>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="col">
+                    <button class="btn ctrlBtn" >C</button>
+                    <button class="btn numBtn">7</button>
+                    <button class="btn numBtn">4</button>
+                    <button class="btn numBtn">1</button>
+                    <button class="btn numBtn">0</button>
+                </div>
+                <div class="col">
+                    <button class="btn ctrlBtn" >del</button>
+                    <button class="btn numBtn">8</button>
+                    <button class="btn numBtn">5</button>
+                    <button class="btn numBtn">2</button>
+                    <button class="btn numBtn">.</button>
+                </div>
+                <div class="col">
+                    <button class="btn ctrlBtn" >√</button>
+                    <button class="btn numBtn">9</button>
+                    <button class="btn numBtn">6</button>
+                    <button class="btn numBtn">3</button>
+                    <button class="btn oprBtn">=</button>
+                </div>
+                <div class="col">
+                    <button class="btn oprBtn" >÷</button>
+                    <button class="btn oprBtn">x</button>
+                    <button class="btn oprBtn">-</button>
+                    <button class="btn oprBtn plus">+</button>
+                </div>
+            </div>
         </div>
-        <div class="row1">
-            <button class="ctrlBtn" >C</button>
-            <button class="ctrlBtn">del</button>
-            <button class="ctrlBtn">sqr</button>
-            <button class="oprBtn">/</button>
         </div>
-        <div class="row2">
-            <button class="numBtn" >7</button>
-            <button class="numBtn">8</button>
-            <button class="numBtn">9</button>
-            <button class="oprBtn">x</button>
-        </div>
-        <div class="row3">
-            <button class="numBtn" >4</button>
-            <button class="numBtn">5</button>
-            <button class="numBtn">6</button>
-            <button class="oprBtn">-</button>
-        </div>
-        <div class="row4">
-            <button class="numBtn">1</button>
-            <button class="numBtn">2</button>
-            <button class="numBtn">3</button>
-            <button class="oprBtn">+</button>
-        </div>
-
-    </div>
+    <footer>
+        <p>copyright © snebo</p>
+    </footer>
     
 </body>
 </html>
