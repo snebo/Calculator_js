@@ -19,16 +19,18 @@
     align-items: center;
 }
 .calculator{
+    background-color: rgb(235, 178, 103);
     width: 450px;
     height: 600px;
     padding: 35px;
-    border-radius: 60px;
+    border-radius: 50px;
     border: 5px solid black;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 .inputBox{
+    background-color: rgb(143, 90, 21);
     width: 100%;
     border-radius: 40px;
     height: 20%;
@@ -36,6 +38,7 @@
     flex-grow: 0;
 }
 .textBox{
+    background-color: rgb(182, 253, 253);
     width: 93%;
     height: 75%;
     margin: 3.5%;
@@ -49,19 +52,23 @@
     justify-content: space-between;
 }
 .result{
+    background-color: rgb(182, 253, 253);    
     font-size: 1.8rem;
     font-weight: bold;
 }
 .func{
+    background-color: rgb(182, 253, 253);
     font-size: 1.3rem;
 }
 .controls{
+    background-color: rgb(235, 178, 103);
     flex-grow: 1;
     display: flex;
     justify-content: center;
     padding: 15px 0;
 }
 .col{
+    background-color: rgb(235, 178, 103);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,8 +80,14 @@ button{
     border-radius: 20px;
 }
 .btn{
+    cursor: pointer;
+    background-color: rgb(143, 90, 21) ;
     margin: 5px;
     flex: 1;
+    font-size: 1.2rem;
+    border: 3px solid black;
+    font-weight: bold;
+    color: white;
 }
 .plus{
     flex-grow: 2.5;
