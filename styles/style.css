@@ -88,9 +88,14 @@ button{
     border: 3px solid black;
     font-weight: bold;
     color: white;
+
+    transition: 300ms;
 }
 .plus{
     flex-grow: 2.5;
+}
+.btn:hover{
+    background-color: rgb(88, 56, 13);
 }
 
 footer{
