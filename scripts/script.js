@@ -22,11 +22,8 @@ function calculate(a, sym, b){
 function setOperator(sym){
 
     if(!firstTry){
-        console.log("Not supposed to run")
         let func = inputBox.textContent.split(operatorSym)
-        console.log(func)
         firstNumber = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
-        console.log(firstNumber)
     }
     else {
         firstNumber = inputBox.textContent
@@ -41,9 +38,7 @@ function setOperator(sym){
         inputBox.textContent+= `${sym}`}
     else if(sym == "÷"){
         inputBox.textContent+= `${sym}`}
-    //////////////////////////////////////
-    // on the first try
-    // grab the first value
+ 
     operatorSym = sym
     
 }
@@ -70,15 +65,13 @@ function funcControl(action){
     else if(action == "="){
         let func = inputBox.textContent.split(operatorSym)
         solution = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
-        console.log(func)
-        console.log(firstNumber)
-        console.log(operatorSym)
         result.textContent = solution
         newOperation = true
         firstTry = true
     }
 }
 
+//load page
 clear()
 //events
 numberBtns.forEach(numberBtn => numberBtn.addEventListener('click', ()=>{
