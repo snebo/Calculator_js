@@ -5,13 +5,22 @@ const operatorBtns = document.querySelectorAll(".oprBtn")
 const ctrlButtons = document.querySelectorAll(".ctrlBtn")
 const result = document.querySelector(".result")
 
-let operatorSym = "", func =[]
+let operatorSym = "", func =[], i=0
 let newOperation = false, firstTry = true
 let solution, lastNumber, firstNumber
 
 //functions
 function setNumber(number){
-    inputBox.textContent+= number
+    if(number != "."){
+        inputBox.textContent+= number
+    }
+    else{
+        if(i<1){
+            inputBox.textContent+= number
+            i = 1
+        }
+    }
+    
 }
 function calculate(a, sym, b){
     if (sym=="+")return a+b
@@ -40,6 +49,7 @@ function setOperator(sym){
         inputBox.textContent+= `${sym}`}
  
     operatorSym = sym
+    i=0
     
 }
 function clear(){
@@ -48,6 +58,7 @@ function clear(){
     newOperation = false
     firstTry = true
     func =  []
+    i=0
 }
 function funcControl(action){
 
