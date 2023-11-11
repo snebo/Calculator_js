@@ -5,7 +5,7 @@ const operatorBtns = document.querySelectorAll(".oprBtn")
 const ctrlButtons = document.querySelectorAll(".ctrlBtn")
 const result = document.querySelector(".result")
 
-let operatorSym = ""
+let operatorSym = "", func =[]
 let newOperation = false, firstTry = true
 let solution, lastNumber, firstNumber
 
@@ -47,6 +47,7 @@ function clear(){
     result.textContent=""
     newOperation = false
     firstTry = true
+    func =  []
 }
 function funcControl(action){
 
@@ -63,11 +64,20 @@ function funcControl(action){
         newOperation = true
     }
     else if(action == "="){
-        let func = inputBox.textContent.split(operatorSym)
-        solution = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
-        result.textContent = solution
-        newOperation = true
-        firstTry = true
+        if(firstTry){
+            result.textContent ="Error, No value"
+        }
+        else{
+            func = inputBox.textContent.split(operatorSym)
+            if(operatorSym == "÷" && func[func.length-1] == 0){
+                result.textContent = "Nice Try ;)"
+                return
+            }
+            solution = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
+            result.textContent = solution
+            newOperation = true
+            firstTry = true
+        }
     }
 }
 
