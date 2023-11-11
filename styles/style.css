@@ -119,6 +119,7 @@ a:hover{
         width: 60px;
     }
     .main_container{
+        height: 80vh;
         background-color: aliceblue;
     }
 }
