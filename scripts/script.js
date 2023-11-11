@@ -85,7 +85,7 @@ function funcControl(action){
                 return
             }
             solution = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
-            result.textContent = solution
+            result.textContent = Math.round(solution*10000)/10000
             newOperation = true
             firstTry = true
         }
