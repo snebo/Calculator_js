@@ -9,18 +9,15 @@
 }
 .main_container{
     height: 92vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
 }
 .calculator{
     background-color: rgb(235, 178, 103);
-    width: 450px;
+    max-width: 450px;
     height: 600px;
     padding: 35px;
     border-radius: 50px;
@@ -102,8 +99,26 @@ button{
 }
 footer{
     text-align: center;
-    margin-top: auto;
-    font-size: 1.2rem;
-    padding: 10px;
+    padding-top: 20px;
     height:8vh;
+    flex: 1;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    transition: 600ms;
+}
+a:hover{
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width:500px) {
+    button{
+        width: 60px;
+    }
+    .main_container{
+        background-color: aliceblue;
+    }
 }
