@@ -6,19 +6,33 @@ const ctrlButtons = document.querySelectorAll(".ctrlBtn")
 const result = document.querySelector(".result")
 
 let operatorSym = ""
-let newOperation = false
+let newOperation = false, firstTry = true
+let solution, lastNumber, firstNumber
 
 //functions
 function setNumber(number){
     inputBox.textContent+= number
 }
 function calculate(a, sym, b){
-    if (sym=="+")return Number(a)+Number(b)
+    if (sym=="+")return a+b
     else if (sym=="x")return a*b
     else if (sym=="-")return a-b
     else if (sym=="÷")return a/b
 }
 function setOperator(sym){
+
+    if(!firstTry){
+        console.log("Not supposed to run")
+        let func = inputBox.textContent.split(operatorSym)
+        console.log(func)
+        firstNumber = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
+        console.log(firstNumber)
+    }
+    else {
+        firstNumber = inputBox.textContent
+        firstTry = false
+    }
+
     if(sym == "+"){
         inputBox.textContent+= `${sym}`}
     else if(sym == "-"){
@@ -27,14 +41,17 @@ function setOperator(sym){
         inputBox.textContent+= `${sym}`}
     else if(sym == "÷"){
         inputBox.textContent+= `${sym}`}
-    
+    //////////////////////////////////////
+    // on the first try
+    // grab the first value
     operatorSym = sym
-
+    
 }
 function clear(){
     inputBox.textContent= ""
     result.textContent=""
     newOperation = false
+    firstTry = true
 }
 function funcControl(action){
 
@@ -46,15 +63,19 @@ function funcControl(action){
         inputBox.textContent = inputBox.textContent.slice(0,-1)
     }
     else if (action == "√"){
-        result.textContent = Math.sqrt(a)
-        inputBox.textContent = `√${a}`
+        result.textContent = Math.sqrt(firstNumber)
+        inputBox.textContent = `√${firstNumber}`
         newOperation = true
     }
     else if(action == "="){
         let func = inputBox.textContent.split(operatorSym)
-        let solution = calculate(func[0], operatorSym, func[1])
+        solution = calculate(Number(firstNumber), operatorSym, Number(func[func.length-1]))
+        console.log(func)
+        console.log(firstNumber)
+        console.log(operatorSym)
         result.textContent = solution
         newOperation = true
+        firstTry = true
     }
 }
 
